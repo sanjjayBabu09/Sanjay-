@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Family Tour & Visa Consultancy</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="Family Tour & Visa Consultancy – visa guidance, tour planning, and travel support for families."
+  />
+
+  <style>
+    :root {
+      --primary: #1c7ed6;
+      --primary-soft: #e7f5ff;
+      --bg: #f4f6fb;
+      --text: #1f2933;
+      --muted: #6b7280;
+      --card-bg: #ffffff;
+      --radius-lg: 1.25rem;
+      --shadow-soft: 0 14px 30px rgba(15, 23, 42, 0.12);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+    }
+
+    body {
+      background: radial-gradient(circle at top, #e7f0ff 0, #f4f6fb 45%, #f9fafb 100%);
+      color: var(--text);
+      min-height: 100vh;
+    }
+
+    /* HEADER */
+    header {
+      background: linear-gradient(135deg, #1c7ed6, #4dabf7);
+      color: #ffffff;
+      padding: 1rem 1.5rem;
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      box-shadow: 0 4px 20px rgba(15, 23, 42, 0.25);
+    }
+
+    .header-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .logo-block {
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+    }
+
+    .logo-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      font-weight: 700;
+    }
+
+    .logo-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .logo-text span:first-child {
+      font-weight: 700;
+      font-size: 1.05rem;
+      letter-spacing: 0.03em;
+    }
+
+    .logo-text span:last-child {
+      font-size: 0.8rem;
+      opacity: 0.9;
+    }
+
+    .header-contact {
+      text-align: right;
+      font-size: 0.85rem;
+    }
+
+    .header-contact strong {
+      font-size: 0.98rem;
+    }
+
+    /* LAYOUT */
+    .page {
+      max-width: 1100px;
+      margin: 1.8rem auto 2.2rem;
+      padding: 0 1.2rem;
+    }
+
+    /* HERO */
+    .hero {
+      background: var(--card-bg);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-soft);
+      padding: 1.8rem 1.5rem 1.6rem;
+      display: grid;
+      grid-template-columns: minmax(0, 1.6fr) minmax(0, 1.2fr);
+      gap: 1.5rem;
+      align-items: center;
+    }
+
+    .hero-main h1 {
+      font-size: 1.9rem;
+      line-height: 1.2;
+      margin-bottom: 0.6rem;
+      color: #102a43;
+    }
+
+    .hero-subtitle {
+      font-size: 0.95rem;
+      color: var(--muted);
+      margin-bottom: 0.9rem;
+    }
+
+    .hero-highlight {
+      padding: 0.6rem 0.9rem;
+      background: var(--primary-soft);
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.85rem;
+      color: #0b4f88;
+      margin-bottom: 0.9rem;
+    }
+
+    .hero-main p {
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+
+    .hero-cta {
+      margin-top: 1.1rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+    }
+
+    .btn {
+      border-radius: 999px;
+      padding: 0.75rem 1.4rem;
+      font-size: 0.95rem;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      transition: transform 0.12s ease, box-shadow 0.12s ease,
+        background-color 0.12s ease, filter 0.12s ease;
+      white-space: nowrap;
+    }
+
+    .btn:active {
+      transform: translateY(1px);
+      box-shadow: none;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: #ffffff;
+      box-shadow: 0 8px 18px rgba(26, 115, 232, 0.35);
+    }
+
+    .btn-primary:hover {
+      filter: brightness(1.05);
+    }
+
+    .btn-outline {
+      background: #ffffff;
+      color: var(--primary);
+      border: 1px solid rgba(28, 126, 214, 0.4);
+    }
+
+    .btn-outline:hover {
+      background: #f8fbff;
+    }
+
+    .btn-secondary {
+      background: #111827;
+      color: #f9fafb;
+    }
+
+    .btn-secondary:hover {
+      filter: brightness(1.05);
+    }
+
+    .hero-side {
+      background: radial-gradient(circle at top left, #dbeafe 0, #eff6ff 45%, #ffffff 100%);
+      border-radius: 1.2rem;
+      padding: 1.1rem 1.1rem 1.2rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-side h2 {
+      font-size: 1.05rem;
+      margin-bottom: 0.7rem;
+      color: #102a43;
+    }
+
+    .hero-side p {
+      font-size: 0.87rem;
+      color: var(--muted);
+      margin-bottom: 0.8rem;
+    }
+
+    .badge-list {
+      font-size: 0.8rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .badge {
+      padding: 0.25rem 0.7rem;
+      border-radius: 999px;
+      background: #ffffff;
+      border: 1px solid #d0e2ff;
+    }
+
+    .floating-tag {
+      position: absolute;
+      right: 1rem;
+      bottom: 1rem;
+      background: rgba(16, 42, 67, 0.95);
+      color: #f9fafb;
+      padding: 0.4rem 0.8rem;
+      border-radius: 999px;
+      font-size: 0.73rem;
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .floating-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: #22c55e;
+      box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.35);
+    }
+
+    /* SECTIONS */
+    .section {
+      margin-top: 1.8rem;
+      background: var(--card-bg);
+      border-radius: var(--radius-lg);
+      box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
+      padding: 1.6rem 1.4rem 1.5rem;
+    }
+
+    .section-header {
+      margin-bottom: 0.9rem;
+    }
+
+    .section-title {
+      font-size: 1.2rem;
+      margin-bottom: 0.2rem;
+      color: #102a43;
+    }
+
+    .section-subtitle {
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 1rem;
+      margin-top: 0.8rem;
+    }
+
+    .service-card {
+      border-radius: 0.9rem;
+      border: 1px solid #e5e7eb;
+      padding: 0.9rem 0.9rem 0.95rem;
+      background: #ffffff;
+    }
+
+    .service-title {
+      font-size: 0.98rem;
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+    }
+
+    .service-text {
+      font-size: 0.86rem;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    .countries-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 0.5rem;
+      margin-top: 0.9rem;
+      font-size: 0.85rem;
+    }
+
+    .country-pill {
+      background: #f3f4f6;
+      border-radius: 0.9rem;
+      padding: 0.45rem 0.7rem;
+      text-align: center;
+      border: 1px solid #e5e7eb;
+    }
+
+    .contact-details p {
+      font-size: 0.93rem;
+      margin-bottom: 0.35rem;
+    }
+
+    .contact-details span.label {
+      display: inline-block;
+      min-width: 80px;
+      font-weight: 600;
+    }
+
+    .contact-note {
+      margin-top: 0.7rem;
+      font-size: 0.84rem;
+      color: var(--muted);
+    }
+
+    .contact-note em {
+      font-style: normal;
+      font-weight: 600;
+      color: #111827;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--muted);
+      padding: 1.5rem 0 1.2rem;
+    }
+
+    footer span {
+      font-weight: 500;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .hero {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .hero {
+        padding: 1.4rem 1.1rem 1.3rem;
+      }
+
+      .hero-main h1 {
+        font-size: 1.6rem;
+      }
+
+      .header-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .header-contact {
+        text-align: left;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="header-inner">
+      <div class="logo-block">
+        <div class="logo-icon">FT</div>
+        <div class="logo-text">
+          <span>Family Tour & Visa Consultancy</span>
+          <span>Safe, simple & stress-free travel</span>
+        </div>
+      </div>
+      <div class="header-contact">
+        <div>Call us</div>
+        <div><strong>+91 94914 24580</strong></div>
+      </div>
+    </div>
+  </header>
+
+  <main class="page">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-main">
+        <div class="hero-highlight">
+          ✈️ Trusted family tour & visa support
+        </div>
+        <h1>Plan Your Family’s Next International Trip With Confidence</h1>
+        <p class="hero-subtitle">
+          We help families with visa guidance, tour planning, tickets, and stay
+          support so you can focus on enjoying the trip.
+        </p>
+        <p>
+          From choosing the right country to preparing your visa documents,
+          our team offers end-to-end support for your family’s travel plans.
+        </p>
+
+        <div class="hero-cta">
+          <!-- WhatsApp Button -->
+          <a
+            class="btn btn-primary"
+            href="https://wa.me/919491424580?text=hey%20I%20want%20wisa%20is%20come"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            💬 Chat on WhatsApp
+          </a>
+
+          <!-- Call Button -->
+          <a class="btn btn-outline" href="tel:9491424580">
+            📞 Call Now
+          </a>
+
+          <!-- Optional: Direct enquiry button -->
+          <a class="btn btn-secondary" href="#contact">
+            📋 Send an Enquiry
+          </a>
+        </div>
+      </div>
+
+      <aside class="hero-side" aria-label="Quick info">
+        <h2>Why families choose us</h2>
+        <p>
+          Personal guidance for first-time international travellers, senior
+          citizens and kids-friendly itineraries.
+        </p>
+        <div class="badge-list">
+          <span class="badge">Visa document guidance</span>
+          <span class="badge">Family-friendly hotels</span>
+          <span class="badge">Flexible budgets</span>
+          <span class="badge">Multi-country trips</span>
+        </div>
+        <div class="floating-tag">
+          <span class="floating-dot"></span>
+          <span>Responds quickly on WhatsApp</span>
+        </div>
+      </aside>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="section" id="services">
+      <div class="section-header">
+        <h2 class="section-title">Our Services</h2>
+        <p class="section-subtitle">
+          Complete support for your family’s travel and visa requirements.
+        </p>
+      </div>
+
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-title">Family Tour Planning</div>
+          <p class="service-text">
+            Custom itineraries based on your budget, travel dates, family size,
+            and preferred countries. Sightseeing, activities and rest days are
+            planned comfortably.
+          </p>
+        </div>
+        <div class="service-card">
+          <div class="service-title">Visa Consultancy</div>
+          <p class="service-text">
+            Guidance on required documents, basic form filling help and general
+            visa process explanation, so you know what to expect before you apply.
+          </p>
+        </div>
+        <div class="service-card">
+          <div class="service-title">Flight & Stay Suggestions</div>
+          <p class="service-text">
+            Suggestions for flights, family-friendly hotels or apartments, and
+            local transport options to make your journey smooth and safe.
+          </p>
+        </div>
+        <div class="service-card">
+          <div class="service-title">Trip Readiness Checklist</div>
+          <p class="service-text">
+            Basic checklists for packing, travel insurance, currency, and
+            important documents so your family is fully prepared before departure.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- COUNTRIES -->
+    <section class="section" id="countries">
+      <div class="section-header">
+        <h2 class="section-title">Popular Countries We Guide For</h2>
+        <p class="section-subtitle">
+          Support for many destinations worldwide. Here are some of the most
+          requested options:
+        </p>
+      </div>
+
+      <div class="countries-grid">
+        <div class="country-pill">USA</div>
+        <div class="country-pill">Canada</div>
+        <div class="country-pill">United Kingdom</div>
+        <div class="country-pill">Australia</div>
+        <div class="country-pill">New Zealand</div>
+        <div class="country-pill">Singapore</div>
+        <div class="country-pill">Malaysia</div>
+        <div class="country-pill">Dubai (UAE)</div>
+        <div class="country-pill">Germany</div>
+        <div class="country-pill">France</div>
+        <div class="country-pill">Italy</div>
+        <div class="country-pill">Switzerland</div>
+        <div class="country-pill">Japan</div>
+        <div class="country-pill">South Korea</div>
+        <div class="country-pill">Thailand</div>
+      </div>
+
+      <p style="margin-top: 0.9rem; font-size: 0.86rem; color: var(--muted);">
+        Planning for another country? Send us a message on WhatsApp and we’ll
+        let you know how we can guide you.
+      </p>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section" id="contact">
+      <div class="section-header">
+        <h2 class="section-title">Contact & WhatsApp</h2>
+        <p class="section-subtitle">
+          Reach us instantly on WhatsApp or by phone call.
+        </p>
+      </div>
+
+      <div class="contact-details">
+        <p>
+          <span class="label">Phone:</span>
+          <a href="tel:9491424580">+91 94914 24580</a>
+        </p>
+        <p>
+          <span class="label">WhatsApp:</span>
+          <a
+            href="https://wa.me/919491424580?text=hey%20I%20want%20wisa%20is%20come"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Chat now
+          </a>
+        </p>
+      </div>
+
+      <div class="contact-note">
+        When a visitor clicks the WhatsApp button, this message will appear
+        automatically in the chat:
+        <br />
+        <em>"hey I want wisa is come"</em>
+        <br /><br />
+        If you ever want to change this text, just update the
+        <code>text=</code> part of the WhatsApp link in the code.
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span>Family Tour & Visa Consultancy</span> &middot;
+    © 2025 All rights reserved.
+  </footer>
+</body>
+</html>
